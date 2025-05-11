@@ -1,35 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Relógio Digital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio do Amor 💘</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6f0;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #d63384;
+    }
+
+    input, button {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-size: 22px;
+      color: green;
+      display: none;
+    }
+
+    #erro {
+      color: red;
+    }
+  </style>
 </head>
-
 <body>
+  <h1>Desafio do Amor 💘</h1>
+  <p>Resolva esta conta para descobrir sua mensagem:</p>
+  <h2>7 × 8 + 6 = ?</h2>
 
-</div>
-    <div class="relogio">
-        <div>
-            <span id="horas">00</span>
-            <span class="tempo">Horas</span>
-        </div>
+  <input type="number" id="resposta" placeholder="Sua resposta aqui" />
+  <button onclick="verificarResposta()">Enviar</button>
 
-        <div>
-            <span id="minutos">00</span>
-            <span class="tempo">Minutos</span> 
-        </div>
-           
-        <div>
-            <span id="segundos">00</span>
-            <span class="tempo">Segundos</span> 
-        </div>
-    </div>
+  <p id="erro"></p>
+  <div id="mensagem">🎉 Parabéns, você acertou! <br> Eu te amo muito! 💖</div>
 
-    <script src="assets/js/script.js"></script>
+  <script>
+    function verificarResposta() {
+      const input = document.getElementById("resposta").value;
+      const erro = document.getElementById("erro");
+      const mensagem = document.getElementById("mensagem");
+
+      if (parseInt(input) === 62) {
+        erro.textContent = "";
+        mensagem.style.display = "block";
+      } else {
+        erro.textContent = "Oops! Tente de novo 😊";
+        mensagem.style.display = "none";
+      }
+    }
+  </script>
 </body>
-
-
 </html>
